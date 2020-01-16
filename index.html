@@ -20,9 +20,25 @@
                 <button type="submit" class="btn btn-primary mb-2">Recherche</button>
             </form>
             <p id="contenu" class="mb-4">
-                <img id="image-pokemon" class="img-thumbnail rounded float-left">
+                <img id="image-pokemon" style="display:none;" class="img-thumbnail rounded float-left">
                 <h2 id="nom-pokemon"></h2>
             </p>
+            <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Taille</td>
+                    <td id="Taille"></td>
+                  </tr>
+                  <tr>
+                    <td>Poids</td>
+                    <td id="Poids"></td>
+                  </tr>
+                  <tr>
+                    <td>Eperience de base</td>
+                    <td id="Xp"></td>
+                  </tr>
+                </tbody>
+              </table>
         </div>
     </div>
 
@@ -46,8 +62,15 @@
             console.log(pokemon);
             var image = document.getElementById("image-pokemon");
             image.src = pokemon.sprites.front_default;
+            image.style.display = "block";
             var nom = document.getElementById("nom-pokemon");
-            nom.innerText = pokemon.name
+            nom.innerText = pokemon.name;
+            var poids = document.getElementById("Poids");
+            poids.innerText = pokemon.weight;
+            var taille = document.getElementById("Taille")
+            taille.innerText = pokemon.height
+            var xp = document.getElementById("Xp")
+            xp.innerText = pokemon.base_experience
         }
     </script>
 
